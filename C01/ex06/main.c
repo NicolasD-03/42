@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/01 18:13:02 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/01 18:17:26 by ndick            ###   ########.fr       */
+/*   Created: 2022/09/02 14:10:48 by ndick             #+#    #+#             */
+/*   Updated: 2022/09/02 14:14:02 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
+#include <stdio.h>
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+int	ft_strlen(char *str);
+
+int	main(void)
+{
+	char	*text;
+	int		len;
+
+	text = "Hello";
+	len = ft_strlen(text);
+	printf("Excepted length : 5 \nCurrent length : %d", len);
+	return (0);
 }
