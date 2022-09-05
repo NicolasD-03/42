@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 18:08:59 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/05 16:16:56 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/05 20:28:19 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,11 @@ void	ft_putstr_non_printable(char *str)
 		}
 		i++;
 	}
+}
+
+int main()
+{
+	char	str[] = "Coucou\ntu vas bien ?";
+	
+	ft_putstr_non_printable(str);
 }
