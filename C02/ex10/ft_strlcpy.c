@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 17:31:27 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/04 18:05:42 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/05 16:09:06 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strlen(char *str)
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
-	int				len;
+	unsigned int	len;
 
 	i = 0;
 	len = ft_strlen(src);
