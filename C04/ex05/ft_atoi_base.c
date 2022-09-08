@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 16:32:30 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/08 18:20:53 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/08 18:49:30 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ int	ft_atoi_base(char *str, char *base)
 		return (0);
 	i = check_begin(str, &sign);
 	j = nb_base(str[i], base);
+	nb = 0;
 	while (j >= 0)
 	{
 		nb = nb * len + j;

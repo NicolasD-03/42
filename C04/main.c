@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 16:50:10 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/08 18:38:07 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/08 18:52:11 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,10 @@ int	main(void)
 	//printf("\nCustom base :\n");
 	//ft_putnbr_base(nbr_to_base, base_custom);
 	//printf("\n");
-	printf("%d\n", ft_atoi_base("133742", "0123456789"));
-	printf("%d\n", ft_atoi_base("	     ---101010", "01"));
-	printf("%d\n", ft_atoi_base(" 	+---539", "0123456789abcdef"));
+	//printf("%d\n", ft_atoi_base("133742", "0123456789"));
+	//printf("%d\n", ft_atoi_base("	     ---101010", "01"));
+	//printf("%d\n", ft_atoi_base(" 	+---539", "0123456789abcdef"));
+	printf("%d\n", ft_atoi_base("       \n\t-----++-+-F45DIpirhfs", "0123456789ABCDEF"));
+	printf("%d\n", ft_atoi_base("of", "poneyvif"));
 	return (0);
 }
