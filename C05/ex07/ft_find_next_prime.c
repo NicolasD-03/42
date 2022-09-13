@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:17:32 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/10 19:24:35 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/12 06:36:48 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,16 @@
 int	ft_is_prime(int nb)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	j = 0;
-	if (nb == 0 || nb == 1)
+	i = 2;
+	if (nb <= 1)
 		return (0);
-	while (i <= nb)
+	while (i <= nb / i)
 	{
 		if (nb % i == 0)
-			j++;
+			return (0);
 		i++;
 	}
-	if (j != 2)
-		return (0);
 	return (1);
 }
 
