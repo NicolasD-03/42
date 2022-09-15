@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:28:04 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/13 19:21:31 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/15 19:27:08 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_sqrt(int nb)
 
 	i = 1;
 	sqrt = 0;
-	if (nb > 2147395600)
+	if (nb <= 0)
 		return (0);
 	if (nb == 1)
 		return (1);
@@ -35,7 +35,7 @@ int	ft_sqrt(int nb)
 /*
 int	main(void)
 {
-	printf("%d", ft_sqrt(25));
+	printf("%d", ft_sqrt(2147483647));
 	return (0);
 }
 */
