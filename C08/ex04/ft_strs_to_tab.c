@@ -6,11 +6,10 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:57:03 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/15 01:47:01 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/15 19:59:09 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include "ft_stock_str.h"
 

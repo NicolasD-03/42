@@ -6,14 +6,14 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:27:01 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/14 21:31:14 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/15 19:55:00 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_abs.h"
 #include <stdio.h>
 
-int main(){
-    printf("%d", ABS(-5));
-    return (0);
+int	main(void){
+	printf("%d", ABS(-5));
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 19:56:15 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/15 01:44:53 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/15 19:49:14 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-typedef char	t_bool;
+typedef int	t_bool;
 
 # define FALSE 0
 # define TRUE 1

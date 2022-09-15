@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 00:05:31 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/15 01:47:29 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/15 20:08:57 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].str != '0')
+	while (par[i].str != 0)
 	{
 		ft_putnbr(par[i].size);
-		ft_putchar('\n');
+		ft_putstr("\n");
 		ft_putstr(par[i].str);
-		ft_putvhar('\n');
+		ft_putstr("\n");
 		ft_putstr(par[i].copy);
-		ft_putchar('\n');
+		ft_putstr("\n");
 		i++;
 	}
 }
