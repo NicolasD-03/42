@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 08:19:46 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/13 20:04:36 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/18 20:17:04 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ char	ft_putnbr_base(int nbr, char *base)
 {
 	int		checked;
 	int		base_len;
-	char	*buffer;
 	long	nb;
 
 	checked = check_base(base);
@@ -53,6 +52,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	if (check_base(base_from) > 0 && check_base(base_to) > 0)
 	{
 		nbr_base_a = ft_atoi_base(nbr, base_from);
+
 	}
 	return (0);
 }
