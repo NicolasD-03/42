@@ -6,11 +6,12 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 06:59:50 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/12 08:19:30 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/17 21:22:27 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -46,17 +47,15 @@ int	malloc_size(int size, char **strs, char *sep)
 	int	i;
 	int	total_size;
 
-	if (total_size == 0)
-		return (1);
 	i = 0;
-	size = 0;
+	total_size = 0;
 	while (i < size)
 	{
 		total_size += ft_strlen(strs[i]);
 		i++;
 	}
 	total_size += ft_strlen(sep) * (size - 1);
-	return (size + 1);
+	return (total_size + 1);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -68,9 +67,11 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	buffer = malloc(malloc_size(size, strs, sep) * sizeof(char));
 	if (!buffer)
 		return (0);
-	buffer[0] = 0;
 	if (size == 0)
+	{
+		buffer[0] = 0;
 		return (buffer);
+	}
 	while (i < size)
 	{
 		ft_strcat(buffer, strs[i]);
@@ -81,3 +82,22 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	buffer[ft_strlen(buffer)] = 0;
 	return (buffer);
 }
+
+/*
+int	main(void)
+{
+	char	*strs[] = {"Hello World", "Test", "aah", "prout"};
+	char	*tab;
+	char	*separator = "-+-";
+	int		i;
+
+	i = 0;
+	tab = ft_strjoin(4, strs, separator);
+	while (tab[i] != 0)
+	{
+		printf("%c", tab[i]);
+		i++;
+	}
+	free(tab);
+}
+*/
