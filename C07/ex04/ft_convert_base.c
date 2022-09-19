@@ -6,53 +6,91 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 08:19:46 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/18 20:17:04 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/19 22:12:43 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str);
-int	nb_base(char c, char *base);
-int	check_begin(char *str, int *sign);
-int	check_base(char *base);
-int	ft_atoi_base(char *str, char *base);
+int		ft_strlen(char *str);
+int		nb_base(char c, char *base);
+int		check_begin(char *str, int *sign);
+int		check_base(char *base);
+int		ft_atoi_base(char *str, char *base);
+void	ft_putnbr_base(int nbr, char *base, char *buffer);
 
-char	ft_putnbr_base(int nbr, char *base)
+int	number_len(int nbr, int base_len)
 {
-	int		checked;
-	int		base_len;
-	long	nb;
+	int	i;
 
-	checked = check_base(base);
+	i = 0;
+	if (nbr < 0)
+	{
+		nbr = -nbr;
+		i++;
+	}
+	while (nbr != 0)
+	{
+		nbr = nbr / base_len;
+		i++;
+	}
+	return (i);
+}
+
+void	put_nbr_base(int nbr, char *base, char *buffer)
+{
+	int		base_len;
+	int		i;
+	int		nb;
+
 	base_len = ft_strlen(base);
 	nb = nbr;
-	if (checked == 1)
+	i = number_len(nbr, base_len);
+	buffer[i] = '\0';
+	i--;
+	if (nb < 0)
 	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -nb;
-		}
-		if (nb < base_len)
-			ft_putchar(base[nb]);
-		if (nb >= base_len)
-		{
-			ft_putnbr_base(nb / base_len, base);
-			ft_putnbr_base(nb % base_len, base);
-		}
+		buffer[0] = '-';
+		nb = -nb;
 	}
+	while (nb >= base_len)
+	{
+		buffer[i] = base[nb % base_len];
+		nb = nb / base_len;
+		i--;
+	}
+	buffer[i] = base[nb];
 }
 
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
 	char	*buffer;
 	int		nbr_base_a;
+	int		base_len;
 
 	if (check_base(base_from) > 0 && check_base(base_to) > 0)
 	{
 		nbr_base_a = ft_atoi_base(nbr, base_from);
-
+		base_len = ft_strlen(base_to);
+		buffer = malloc(sizeof(char) * number_len(nbr_base_a, base_len) + 1);
+		put_nbr_base(nbr_base_a, base_to, buffer);
+		return (buffer);
 	}
 	return (0);
 }
+
+/*
+int	main(void)
+{
+	char	*nbr = "      +---666424242";
+	char	*base_from = "0123456789";
+	char	*base_to = "01";
+	char	*result;
+
+	result = ft_convert_base(nbr, base_from, base_to);
+	printf("%s", result);
+
+	return (0);
+}
+*/
