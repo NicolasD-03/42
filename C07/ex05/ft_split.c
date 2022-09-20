@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:15:24 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/20 01:04:12 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 22:18:37 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	count_words(char *str, char *charset)
 	count = 0;
 	while (str[i])
 	{
-		if (check_charset(str[i], charset) == 0)
+		if (check_charset(str[i], charset) == 0 && str[i] > 32 && str[i] != 127)
 		{
 			count++;
 			while (check_charset(str[i], charset) == 0)
@@ -82,10 +82,11 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	j = 0;
+	printf("No word : %d\n", count_words(str, charset));
 	tab = malloc(sizeof(char *) * (count_words(str, charset) + 1));
 	while (str[i])
 	{
-		if (check_charset(str[i], charset) == 0)
+		if (check_charset(str[i], charset) == 0 && str[i] > 32 && str[i] != 127)
 		{
 			tab[j] = word(&str[i], charset);
 			j++;
@@ -102,8 +103,8 @@ char	**ft_split(char *str, char *charset)
 int	main(void)
 {
 	char	**tab;
-	char	*str = "    2656Hello      World 42 ";
-	char	*charset = "+";
+	char	*str = "Prout -+ Hello +  + + World";
+	char	*charset = "-+-";
 	int		i;
 
 	tab = ft_split(str, charset);

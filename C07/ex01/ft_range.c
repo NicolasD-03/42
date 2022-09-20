@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 02:24:07 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/17 20:25:40 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 20:20:57 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	*ft_range(int min, int max)
 	{
 		i = 0;
 		size = max - min;
-		buffer = malloc(size + 1 * sizeof(int));
+		buffer = (int *)malloc(size + 1 * sizeof(int));
 		if (!buffer)
 			return (0);
 		while (i < size)

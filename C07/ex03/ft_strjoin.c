@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 06:59:50 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/17 21:22:27 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 20:38:51 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	malloc_size(int size, char **strs, char *sep)
 		i++;
 	}
 	total_size += ft_strlen(sep) * (size - 1);
-	return (total_size + 1);
+	return (total_size);
 }
 
 char	*ft_strjoin(int size, char **strs, char *sep)
@@ -64,7 +64,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 
 	i = 0;
-	buffer = malloc(malloc_size(size, strs, sep) * sizeof(char));
+	buffer = malloc(malloc_size(size, strs, sep) + 1 * sizeof(char));
 	if (!buffer)
 		return (0);
 	if (size == 0)

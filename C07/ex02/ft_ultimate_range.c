@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 04:08:08 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/17 20:30:34 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 20:27:34 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,18 @@ int	ft_ultimate_range(int **range, int min, int max)
 	if (min < max)
 	{
 		i = 0;
-		buffer = malloc(max - min + 1 * sizeof(int));
+		buffer = (int *)malloc(max - min + 1 * sizeof(int));
 		if (!buffer)
 		{
+			*range = 0;
 			return (-1);
 		}
+		*range = buffer;
 		while (i < max - min)
 		{
 			buffer[i] = min + i;
 			i++;
 		}
-		*range = buffer;
 		return (i);
 	}
 	else

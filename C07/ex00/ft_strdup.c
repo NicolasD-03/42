@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 00:09:59 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/12 06:58:31 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 20:21:11 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strdup(char *src)
 
 	i = 0;
 	len = ft_len(src);
-	buffer = malloc((len + 1) * sizeof(char));
+	buffer = (char *)malloc((len + 1) * sizeof(char));
 	if (!buffer)
 	{
 		return (0);
