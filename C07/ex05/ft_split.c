@@ -6,7 +6,7 @@
 /*   By: ndick <ndick@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 22:15:24 by ndick             #+#    #+#             */
-/*   Updated: 2022/09/20 22:18:37 by ndick            ###   ########.fr       */
+/*   Updated: 2022/09/20 22:20:25 by ndick            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	j = 0;
-	printf("No word : %d\n", count_words(str, charset));
 	tab = malloc(sizeof(char *) * (count_words(str, charset) + 1));
 	while (str[i])
 	{
